@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
     let [menubar, setMenubar] = useState(false);
@@ -11,8 +12,15 @@ const Header = () => {
         setMenubar(false)
     }
 
+    let navigate = useNavigate();
+    const handelnavigatepage = (e) => {
+        navigate("smartphones", { state: { key: `${e.target.innerText}` } });
+        setMenubar(false)
+
+    }
+
     return (
-        <div className='bg-white  p-8 shadow-lg flex justify-between'>
+        <div className='bg-white  p-8 shadow-lg flex justify-between header'>
             <div><FontAwesomeIcon icon={faBars} style={{ width: "30px", height: "30px" }} onClick={() => {
                 handleShowmenuBar()
             }} /></div>
@@ -26,12 +34,28 @@ const Header = () => {
                     handleShowmenuBarclose()
                 }} /></div>
                 <ul className='relative top-20 px-7 font-bold font-serif text-xl '>
-                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400'>Smartphones</li>
-                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400'>laptops</li>
-                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400'>fragrances</li>
-                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400'>skincare</li>
-                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400'>groceries</li>
-                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400'>home decoration</li>
+                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400' onClick={() => {
+                        navigate("/");
+                        setMenubar(false)
+                    }}>Home</li>
+                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400' onClick={(e) => {
+                        handelnavigatepage(e)
+                    }}>Smartphones</li>
+                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400' onClick={(e) => {
+                        handelnavigatepage(e)
+                    }}>laptops</li>
+                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400' onClick={(e) => {
+                        handelnavigatepage(e)
+                    }}>fragrances</li>
+                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400' onClick={(e) => {
+                        handelnavigatepage(e)
+                    }}>skincare</li>
+                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400' onClick={(e) => {
+                        handelnavigatepage(e)
+                    }}>groceries</li>
+                    <li className='bg-white w-48 p-3 justify-center my-4  flex hover:bg-black hover:text-white active:bg-slate-400' onClick={(e) => {
+                        handelnavigatepage(e)
+                    }}>home decoration</li>
 
 
                 </ul>

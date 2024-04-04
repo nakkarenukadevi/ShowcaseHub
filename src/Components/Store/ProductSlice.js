@@ -5,6 +5,7 @@ const productSlice = createSlice({
     initialState: { storedata: [] },
     reducers: {
         initialData: (state, action) => {
+            state.storedata = action.payload
 
         }
 
@@ -13,4 +14,4 @@ const productSlice = createSlice({
 
 })
 export const { initialData } = productSlice.actions;
-export default productSlice;
+export default productSlice.reducer;

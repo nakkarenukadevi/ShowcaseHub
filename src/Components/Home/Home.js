@@ -1,25 +1,31 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import ProductData from './ProductData';
+import { useDispatch, useSelector } from 'react-redux';
+import { initialData } from '../Store/ProductSlice';
+
 const Home = () => {
-    let [product, setProduct] = useState([])
+
 
     useEffect(() => {
-        getdata()
+        getdata();
+    }, []);
 
-
-    }, [])
+    let dispatch = useDispatch();
 
     const getdata = async () => {
         let data = await fetch("https://dummyjson.com/products");
         let json = await data.json();
-        console.log(json)
-        setProduct(json.products)
+
+        dispatch(initialData(json.products))
+
     }
 
-
-
     return <>
+        {
+
+            <ProductData />
+        }
 
     </>
 

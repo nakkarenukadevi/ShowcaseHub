@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 
 import { Provider } from 'react-redux'
 import Store from "./Components/Store/Store"
+import Fotter from './Components/Fotter/Fotter';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <Header />
       <Outlet />
+      <Fotter />
     </div>
   </Provider >
   );

@@ -2,8 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../../App";
 import Home from "../Home/Home";
 import ProductData from "../Home/ProductData";
-import Smartphones from "../Smartphones/Smartphones";
-import Laptops from "../laptops/laptops";
+
+import Category from "../category/Category";
+import SingelProduct from "../singelProduct/SingelProduct";
+import Product from "../Product";
+import Productdetails from "../Productdetails/Productdetails";
+import Cart from "../Cart/Cart";
+import Fotter from "../Fotter/Fotter";
+
 
 
 
@@ -23,17 +29,29 @@ const router = createBrowserRouter([
                 element: <ProductData />
             },
             {
-                path: "smartphones",
-                element: <Smartphones />
+                path: "product",
+                element: <Product />
             },
             {
-                path: "smartphones",
-                element: <Smartphones />
-            }
-            ,
+                path: "cart",
+                element: <Cart />
+            },
             {
-                path: "laptops",
-                element: <Laptops />
+                path: "category",
+                element: <Category />
+            },
+            {
+                path: "/category/singelproduct/:id",
+                element: <SingelProduct />
+
+            }
+            , {
+                path: "category/singelproduct/:id/productdetails/:id",
+                element: <Productdetails />
+            },
+            {
+                path: "fotter",
+                element: <Fotter />
             }
         ]
 

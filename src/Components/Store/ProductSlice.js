@@ -49,9 +49,6 @@ const productSlice = createSlice({
         }
     }
 
-
-
-
 })
 export const { initialData, addtoCart, increment, dicrement, deleteItem } = productSlice.actions;
 export default productSlice.reducer;

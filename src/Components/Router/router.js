@@ -9,6 +9,8 @@ import Product from "../Product";
 import Productdetails from "../Productdetails/Productdetails";
 import Cart from "../Cart/Cart";
 import Fotter from "../Fotter/Fotter";
+import Partice from "../Partice";
+import Button from "../Home/BhanuButton/Button";
 
 
 
@@ -52,6 +54,17 @@ const router = createBrowserRouter([
             {
                 path: "fotter",
                 element: <Fotter />
+            },
+            {
+                path: "partice",
+                element: <Partice />
+
+            }
+            ,
+            {
+                path: "button",
+                element: <Button />
+
             }
         ]
 
